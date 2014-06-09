@@ -7,10 +7,11 @@ var makeLinkedList = function(){
     var newNode = makeNode(value);
     if(list.head === null) { //if no items in the list yet
       list.head = newNode;
+      list.tail = newNode;
     } else {
       list.tail.next = newNode;
+      list.tail = newNode;
     }
-    list.tail = newNode;
   };
 
   list.removeHead = function(){

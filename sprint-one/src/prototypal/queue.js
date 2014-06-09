@@ -15,6 +15,7 @@ var queueMethods = {
   enqueue: function(value){
     this._length++;
     if(this._length === 1){
+      //necessary in case dequeue removes items until length of list is 1
       this._last = this._first;
     } else {
       this._last++;
@@ -24,6 +25,7 @@ var queueMethods = {
   dequeue: function(){
     if(this._length > 0){
       this._length--;
+      
       var temp = this._storage[this._first];
       delete this._storage[this._first];
       this._first++;
